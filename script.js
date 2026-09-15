@@ -1,5 +1,11 @@
 const games = [
   {
+    title: "OvO Platformer",
+    category: "Action",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400",
+    embedUrl: "https://scratch.mit.edu/projects/630225139/embed"
+  },
+  {
     title: "Geometry Dash Lite",
     category: "Arcade",
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400",
@@ -16,6 +22,12 @@ const games = [
     category: "Action",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400",
     embedUrl: "https://scratch.mit.edu/projects/10015822/embed"
+  },
+  {
+    title: "Flappy Bird",
+    category: "Arcade",
+    image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=400",
+    embedUrl: "https://scratch.mit.edu/projects/18381211/embed"
   }
 ];
 
@@ -51,7 +63,9 @@ function closeGame() {
 function filterCategory(cat) {
   const buttons = document.querySelectorAll('.cat-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
 
   if (cat === 'all') {
     renderGames(games);
