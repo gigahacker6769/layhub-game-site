@@ -60,6 +60,17 @@ function closeGame() {
   document.getElementById("playerModal").style.display = "none";
 }
 
+function toggleFullscreen() {
+  const iframe = document.getElementById("gameFrame");
+  if (iframe.requestFullscreen) {
+    iframe.requestFullscreen();
+  } else if (iframe.webkitRequestFullscreen) {
+    iframe.webkitRequestFullscreen();
+  } else if (iframe.msRequestFullscreen) {
+    iframe.msRequestFullscreen();
+  }
+}
+
 function filterCategory(cat) {
   const buttons = document.querySelectorAll('.cat-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
