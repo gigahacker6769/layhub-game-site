@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PlayHub - Free Web Games</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayHub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Navbar -->
   <header>
     <div class="logo">🎮 PlayHub</div>
-    <input type="text" id="searchInput" placeholder="Search games..." onkeyup="filterGames()">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search games..." onkeyup="filterGames()">
+    </div>
   </header>
 
-  <!-- Categories -->
-  <div class="categories">
+  <nav class="categories">
     <button class="cat-btn active" onclick="filterCategory('all')">All</button>
     <button class="cat-btn" onclick="filterCategory('Action')">Action</button>
     <button class="cat-btn" onclick="filterCategory('Arcade')">Arcade</button>
-    <button class="cat-btn" onclick="filterCategory('Racing')">Racing</button>
-  </div>
+  </nav>
 
-  <!-- Game Player Screen -->
+  <main>
+    <div class="game-grid" id="gameGrid"></div>
+  </main>
+
+  <!-- Modal Player -->
   <div id="playerModal" class="modal">
     <div class="modal-content">
-      <button class="close-btn" onclick="closeGame()">✕ Close</button>
-      <iframe id="gameFrame" src="" frameborder="0"></iframe>
+      <div class="modal-controls">
+        <button onclick="toggleFullscreen()" class="fullscreen-btn">⛶ Fullscreen</button>
+        <button onclick="closeGame()" class="close-btn">✖ Close</button>
+      </div>
+      <iframe id="gameFrame" src="" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
-
-  <!-- Game Grid -->
-  <main class="game-grid" id="gameGrid"></main>
 
   <script src="script.js"></script>
 </body>
