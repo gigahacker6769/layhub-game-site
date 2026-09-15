@@ -3,7 +3,7 @@ const games = [
     title: "OvO Platformer",
     category: "Action",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400",
-    embedUrl: "https://turbowarp.org/630225139/embed"
+    embedUrl: "https://turbowarp.org/688320387/embed"
   },
   {
     title: "Geometry Dash Lite",
